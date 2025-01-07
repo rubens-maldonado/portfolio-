@@ -160,7 +160,7 @@ header .contato div
     }
 }
 
-@media (max-width: 950px)
+@media (max-width: 1000px)
 {
     .menu-toggle {display: block;}
     nav ul
