@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!--END GOOGLE FONTS-->
+
+    <link rel="stylesheet" href="style.css">
+    <title>Portifolio</title>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="Name">
+                    RUBENS MALDONADO
+
+            </div><!--logo-->
+            <button class="menu-toggle" aria-label="Abrir menu"></button>
+            <button class="btn-contato"></button>
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Especialidade</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Projetos</a></li>
+                </ul>
+            </nav>
+            <div class="contato">
+                <a href="https://github.com/rubens-maldonado" class="git">
+                    <div class="git1"></div>
+                    <div class="git2"></div>
+                </a> <!--git-->
+                <a href="https://linkedin.com.br/in/rubens-maldonado" class="in">
+                    <div class="in1"></div>
+                    <div class="in2"></div>
+                </a><!--in-->
+                <a href="https://w.app/RubensMaldonado" class="wpp">
+                    <div class="wpp1"></div>
+                    <div class="wpp2"></div>
+                </a><!--wpp-->
+            </div><!--contato-->
+        </div><!--interface-->
+    </header>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        const btnContato = document.querySelector('.btn-contato');
+        const contatoDiv = document.querySelector('.contato');
+
+        // Função para fechar o menu de contato
+        function closeContato() {
+            contatoDiv.classList.remove('active');
+        }
+
+        // Função para fechar o menu de navegação
+        function closeMenu() {
+            navMenu.classList.remove('active');
+        }
+
+        // Toggle do menu (hamburguer)
+        menuToggle.addEventListener('click', () => {
+            // Fecha o menu de contato se estiver aberto
+            closeContato();
+            
+            // Alterna a visibilidade do menu de navegação
+            navMenu.classList.toggle('active');
+        });
+
+        // Toggle do botão de contato
+        btnContato.addEventListener('click', () => {
+            // Fecha o menu de navegação se estiver aberto
+            closeMenu();
+            
+            // Alterna a visibilidade do menu de contato
+            contatoDiv.classList.toggle('active');
+        });
+
+    </script>         
+</body>
+</html>

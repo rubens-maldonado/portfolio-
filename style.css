@@ -1,0 +1,253 @@
+/* GERAL */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Assistant", serif;
+}
+
+body
+{
+    background-color: black;
+    height: 100vh;
+}
+
+.interface
+{
+    background-color: grey;
+    width: 100%; 
+    height: 60px; 
+    box-shadow: 0 4px 6px white;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    z-index: 10;
+}
+
+/*ESTILO*/
+
+header
+{
+    padding: 40px 4%;
+}
+
+header > .interface
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a
+{
+    color: black;
+    text-decoration: none;
+}
+
+header a:hover
+{
+    color: white
+}
+
+header .Name
+{
+    color: white;
+    font-size: 20px;
+    font-family: serif;
+    margin: 15px;
+    text-shadow: 10px 10px 6px black;
+}
+
+header nav ul
+{
+    list-style-type: none;
+}
+
+header nav ul li
+{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+header .contato a{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+header .contato div
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease;
+}
+
+/* reponsividade para mobile */
+
+.btn-contato {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    right: 10px; /* Adiciona 10px de distância da borda direita */
+
+}
+
+.btn-contato::before {
+    content: "Contato"; /* Ícone do menu */
+    font-size: 35px;
+    color: black;
+}
+
+.menu-toggle
+{
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px
+
+}
+
+.menu-toggle::before {
+    content: "☰"; /* Ícone do menu */
+    font-size: 35px;
+    color: black;
+}
+
+@media (max-width: 600px)
+{
+    .btn-contato {display: block;}
+
+    .contato {
+        display: none;
+        flex-direction: row;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: gray;
+        width: 100%;
+        box-shadow: 0 4px 6px white;
+        padding: 10px 0;
+        justify-content: center;
+    }
+
+    .contato.active
+    {
+        display: flex;
+    }
+
+    .contato a {
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .menu-toggle
+    {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 950px)
+{
+    .menu-toggle {display: block;}
+    nav ul
+    {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: gray;
+        width: 100%;
+        box-shadow: 0 4px 6px white;
+        padding: 10px 0;
+    }
+    
+    nav ul.active
+    {
+        display: flex;
+    }
+
+    nav ul li
+    {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+
+}
+/* ICONE GITHUB */
+.git1 {
+    background-image: url('img/git1.png');
+    opacity: 1;
+    z-index: 1;
+}
+
+.git2 {
+    background-image: url('img/git2.png');
+    opacity: 0; 
+    z-index: 2;
+}
+
+.git:hover .git1 {
+    opacity: 0; 
+}
+
+.git:hover .git2 {
+    opacity: 1; 
+}
+
+/* ICONE LINKEDIN */
+.in1 {
+    background-image: url('img/in1.png');
+    opacity: 1;
+    z-index: 1;
+}
+
+.in2 {
+    background-image: url('img/in2.png');
+    opacity: 0;
+    z-index: 2;
+}
+
+.in:hover .in1 {
+    opacity: 0;
+}
+
+.in:hover .in2 {
+    opacity: 1;
+}
+
+/* ICONE WHATSAPP */
+.wpp1 {
+    background-image: url('img/wpp1.png');
+    opacity: 1;
+    z-index: 1;
+}
+
+.wpp2 {
+    background-image: url('img/wpp2.png');
+    opacity: 0;
+    z-index: 2;
+}
+
+.wpp:hover .wpp1 {
+    opacity: 0;
+}
+
+.wpp:hover .wpp2 {
+    opacity: 1;
+}
