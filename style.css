@@ -1,29 +1,43 @@
 /* GERAL */
 
-*
+:root
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Assistant", serif;
+    color-scheme: light dark;
 }
 
-body
-{
-    background-color: black;
+/* Tema Claro */
+body {
+    background-color: rgb(226, 224, 224);
+    color: black;
     height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.interface
-{
-    background-color: grey;
-    width: 100%; 
-    height: 60px; 
-    box-shadow: 0 4px 6px white;
+/* Tema Escuro */
+body.dark-mode {
+    background-color: #1b1b1b;
+    color: white;
+}
+
+.interface {
+    background: linear-gradient(to bottom, #535353, rgb(228, 227, 227));
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 6px 6px black;
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 10;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.dark-mode .interface {
+    background: linear-gradient(to bottom, grey, black);
+    box-shadow: 0 4px 6px white;
 }
 
 /*ESTILO*/
@@ -44,20 +58,46 @@ header a
 {
     color: black;
     text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
 }
 
-header a:hover
+body.dark-mode header a
 {
-    color: white
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+header .menu-desktop a:hover
+{
+    transform: scale(1.2);
+}
+
+body.dark-mode header .menu-desktop a:hover
+{
+    transform: scale(1.2);
 }
 
 header .Name
 {
+    color: black;
+    font-size: 20px;
+    font-family: serif;
+    margin: 5px;
+    text-shadow: 10px 10px 6px black;
+    font-size: clamp(10px, 4vw, 30px); /* A fonte será ajustada entre 12px e 20px, com 4vw como base */
+}
+
+body.dark-mode header .Name
+{
     color: white;
     font-size: 20px;
     font-family: serif;
-    margin: 15px;
-    text-shadow: 10px 10px 6px black;
+    margin: 5px;
+    text-shadow: 10px 10px 6px white;
+    font-size: clamp(10px, 4vw, 30px); /* A fonte será ajustada entre 12px e 20px, com 4vw como base */
 }
 
 header nav ul
@@ -71,7 +111,8 @@ header nav ul li
     padding: 0 40px;
 }
 
-header .contato a{
+header .contato a
+{
     position: relative;
     display: inline-block;
     width: 50px;
@@ -94,7 +135,8 @@ header .contato div
 
 /* reponsividade para mobile */
 
-.btn-contato {
+.btn-contato 
+{
     display: none;
     font-size: 24px;
     background: none;
@@ -104,45 +146,80 @@ header .contato div
 
 }
 
-.btn-contato::before {
+.btn-contato::before 
+{
     content: "Contato"; /* Ícone do menu */
     font-size: 35px;
     color: black;
 }
 
-.menu-toggle
+body.dark-mode .btn-contato::before
 {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 30px
-
-}
-
-.menu-toggle::before {
-    content: "☰"; /* Ícone do menu */
-    font-size: 35px;
-    color: black;
+    color: rgb(202, 202, 202);
 }
 
 @media (max-width: 600px)
 {
-    .btn-contato {display: block;}
+    .btn-contato
+    {
+        display: inline-block;
+        background: linear-gradient(to bottom, rgb(228, 227, 227), #535353);
+        border-radius: 30px;
+        transition: 0.5s;
+    }
 
-    .contato {
+    body.dark-mode .btn-contato
+    {
+        background: linear-gradient(to bottom, black, grey);
+    }
+
+    .btn-contato:hover 
+    {
+        box-shadow: 0 0 6px black;
+        border-radius: 30px;
+        transition: 0.5s;
+    }
+
+    body.dark-mode .btn-contato:hover
+    {
+        box-shadow: 0 0 6px white;
+    }
+
+    .btn-contato:active 
+    {
+        display: inline-block;
+        background: linear-gradient(to bottom, #535353, rgb(228, 227, 227));
+        border-radius: 30px;
+        transition: 0.5s;
+    }
+
+    body.dark-mode .btn-contato:active 
+    {
+        background: linear-gradient(to bottom, grey, black);
+    }
+    
+
+    .contato 
+    {
         display: none;
         flex-direction: row;
         position: absolute;
+        font-weight: 500;
         top: 60px;
         right: 0;
-        background-color: gray;
         width: 100%;
-        box-shadow: 0 4px 6px white;
+        box-shadow: 0 4px 6px black;
         padding: 10px 0;
         justify-content: center;
+        background: linear-gradient(to bottom, rgb(228, 227, 227), #535353);
     }
+    
+    body.dark-mode .contato
+    {
+        box-shadow: 0 4px 6px white;
+        background: linear-gradient(to bottom, black, grey);
+    }
+    
 
     .contato.active
     {
@@ -160,7 +237,29 @@ header .contato div
     }
 }
 
-@media (max-width: 1000px)
+.menu-toggle {
+    display: none; /* Mantém o comportamento inline-block */
+    font-size: 35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center; /* Centraliza o ícone dentro do botão */
+    margin: 0; /* Garante que o botão fique centralizado no contêiner flex */
+    position: relative; /* Evita sobreposição com outros elementos */
+}
+
+.menu-toggle::before {
+    content: "☰"; /* Ícone do menu */
+    font-size: 35px;
+    color: black;
+}
+
+body.dark-mode .menu-toggle::before
+{
+    color: white;
+}
+
+@media (max-width: 1100px)
 {
     .menu-toggle {display: block;}
     nav ul
@@ -168,12 +267,19 @@ header .contato div
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 44px;
         right: 0;
-        background-color: gray;
         width: 100%;
         box-shadow: 0 4px 6px white;
         padding: 10px 0;
+        background: linear-gradient(to bottom, rgb(228, 227, 227), #535353);
+        box-shadow: 0 4px 6px black;
+    }
+
+    body.dark-mode nav ul
+    {
+        background: linear-gradient(to bottom, black, gray);
+        box-shadow: 0 4px 6px white;
     }
     
     nav ul.active
@@ -208,6 +314,7 @@ header .contato div
 
 .git:hover .git2 {
     opacity: 1; 
+    transform: scale(1.1);
 }
 
 /* ICONE LINKEDIN */
@@ -229,6 +336,7 @@ header .contato div
 
 .in:hover .in2 {
     opacity: 1;
+    transform: scale(1.2);
 }
 
 /* ICONE WHATSAPP */

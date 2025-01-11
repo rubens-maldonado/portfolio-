@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<title>Rubens Maldonado</title>
 <head>
+    <title>Rubens Maldonado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--GOOGLE FONTS-->
@@ -9,9 +10,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!--END GOOGLE FONTS-->
+    <!--Open Graph-->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Rubens Maldonado">
+    <meta property="og:description" content="Desenvolvedor backend C/C++, JS, Python...">
+    <meta property="og:image" content="img/git2.png">
+    <!--END Open Graph-->
+    <link rel="icon" type="image/x-icon" href="img/c++big.png">
+
+
 
     <link rel="stylesheet" href="style.css">
-    <title>Portifolio</title>
 </head>
 <body>
     <header>
@@ -44,8 +54,8 @@
                     <div class="wpp2"></div>
                 </a><!--wpp-->
             </div><!--contato-->
-        </div><!--interface-->
     </header>
+    <button id="toggle-theme">Light or Dark</button></div><!--interface-->
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('nav ul');
@@ -78,6 +88,15 @@
             
             // Alterna a visibilidade do menu de contato
             contatoDiv.classList.toggle('active');
+        });
+
+        // Pega o botão de alternância de tema
+        const toggleButton = document.getElementById("toggle-theme");
+
+        // Adiciona o evento de clique
+        toggleButton.addEventListener("click", function() {
+            // Alterna a classe 'dark-mode' no body
+            document.body.classList.toggle("dark-mode");
         });
 
     </script>         
