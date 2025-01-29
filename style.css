@@ -1,11 +1,8 @@
 /* GERAL */
-
-:root
-{
+:root {
     color-scheme: light dark;
 }
 
-/* Tema Claro */
 body {
     background-color: rgb(226, 224, 224);
     color: black;
@@ -14,17 +11,10 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Tema Escuro */
-body.dark-mode {
-    background-color: #1b1b1b;
-    color: white;
-}
-
+/* Tema Claro */
 .interface {
-    background: linear-gradient(to bottom, #535353, rgb(228, 227, 227));
     width: 100%;
     height: 60px;
-    box-shadow: 0 6px 6px black;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,175 +22,106 @@ body.dark-mode {
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-    transition: background 0.5s ease, box-shadow 0.5s ease;
-}
-
-body.dark-mode .interface {
-    background: linear-gradient(to bottom, grey, black);
-    box-shadow: 0 4px 6px white;
+    transition: all 0.5s ease;
+    background: linear-gradient(to bottom, #535353, rgb(228, 227, 227));
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
 }
 
 /*ESTILO*/
-
-header
-{
+header {
     padding: 40px 4%;
 }
 
-header > .interface
-{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    header > .interface {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-header a
-{
-    color: black;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.2s;
-}
+    header a {
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.2s;
+        color: black;
+    }
 
-body.dark-mode header a
-{
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.2s;
-}
+    header .menu-desktop a:hover {
+        transform: scale(1.2);
+    }
 
-header .menu-desktop a:hover
-{
-    transform: scale(1.2);
-}
+    header .Name {
+        font-size: 20px;
+        font-family: serif;
+        margin: 5px;
+        text-shadow: 10px 10px 6px black;
+        font-size: clamp(10px, 4vw, 30px);
+        color: black;
+    }
 
-body.dark-mode header .menu-desktop a:hover
-{
-    transform: scale(1.2);
-}
+    header nav ul {
+        list-style-type: none;
+    }
 
-header .Name
-{
-    color: black;
-    font-size: 20px;
-    font-family: serif;
-    margin: 5px;
-    text-shadow: 10px 10px 6px black;
-    font-size: clamp(10px, 4vw, 30px); /* A fonte será ajustada entre 12px e 20px, com 4vw como base */
-}
+        header nav ul li {
+            display: inline-block;
+            padding: 0 40px;
+        }
 
-body.dark-mode header .Name
-{
-    color: white;
-    font-size: 20px;
-    font-family: serif;
-    margin: 5px;
-    text-shadow: 10px 10px 6px white;
-    font-size: clamp(10px, 4vw, 30px); /* A fonte será ajustada entre 12px e 20px, com 4vw como base */
-}
+    header .contato a {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        text-decoration: none;
+        margin: 5px;
+    }
 
-header nav ul
-{
-    list-style-type: none;
-}
+    header .contato div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-position: center;
+        transition: opacity 0.5s ease;
+    }
 
-header nav ul li
-{
-    display: inline-block;
-    padding: 0 40px;
-}
-
-header .contato a
-{
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    text-decoration: none;
-    margin: 5px;
-}
-
-header .contato div
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 0.5s ease;
-}
-
-/* reponsividade para mobile */
-
-.btn-contato 
-{
+/* Responsividade para mobile */
+.btn-contato {
     display: none;
     font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
-    right: 10px; /* Adiciona 10px de distância da borda direita */
-
-}
-
-.btn-contato::before 
-{
-    content: "Contato"; /* Ícone do menu */
-    font-size: 35px;
+    right: 10px;
     color: black;
 }
 
-body.dark-mode .btn-contato::before
-{
-    color: rgb(202, 202, 202);
-}
+    .btn-contato::before {
+        content: "Contato";
+        font-size: 35px;
+    }
 
-@media (max-width: 600px)
-{
-    .btn-contato
-    {
+@media (max-width: 600px) {
+    .btn-contato {
         display: inline-block;
+        border-radius: 30px;
+        transition: 0.5s;
         background: linear-gradient(to bottom, rgb(228, 227, 227), #535353);
-        border-radius: 30px;
-        transition: 0.5s;
     }
 
-    body.dark-mode .btn-contato
-    {
-        background: linear-gradient(to bottom, black, grey);
-    }
+        .btn-contato:hover {
+            border-radius: 30px;
+            transition: 0.5s;
+            box-shadow: 0 0 6px black;
+        }
 
-    .btn-contato:hover 
-    {
-        box-shadow: 0 0 6px black;
-        border-radius: 30px;
-        transition: 0.5s;
-    }
+        .btn-contato:active {
+            background: linear-gradient(to bottom, #535353, rgb(228, 227, 227));
+        }
 
-    body.dark-mode .btn-contato:hover
-    {
-        box-shadow: 0 0 6px white;
-    }
-
-    .btn-contato:active 
-    {
-        display: inline-block;
-        background: linear-gradient(to bottom, #535353, rgb(228, 227, 227));
-        border-radius: 30px;
-        transition: 0.5s;
-    }
-
-    body.dark-mode .btn-contato:active 
-    {
-        background: linear-gradient(to bottom, grey, black);
-    }
-    
-
-    .contato 
-    {
+    .contato {
         display: none;
         flex-direction: row;
         position: absolute;
@@ -208,124 +129,183 @@ body.dark-mode .btn-contato::before
         top: 60px;
         right: 0;
         width: 100%;
-        box-shadow: 0 4px 6px black;
         padding: 10px 0;
         justify-content: center;
         background: linear-gradient(to bottom, rgb(228, 227, 227), #535353);
-    }
-    
-    body.dark-mode .contato
-    {
-        box-shadow: 0 4px 6px white;
-        background: linear-gradient(to bottom, black, grey);
-    }
-    
-
-    .contato.active
-    {
-        display: flex;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
-    .contato a {
-        text-align: center;
-        padding: 10px 20px;
-    }
-    .menu-toggle
-    {
-        display: inline-block;
-        margin-right: 10px;
-    }
+        .contato.active {
+            display: flex;
+        }
+
+        .contato a {
+            text-align: center;
+            padding: 10px 20px;
+        }
 }
 
 .menu-toggle {
-    display: none; /* Mantém o comportamento inline-block */
+    display: none;
     font-size: 35px;
     background: none;
     border: none;
     cursor: pointer;
-    text-align: center; /* Centraliza o ícone dentro do botão */
-    margin: 0; /* Garante que o botão fique centralizado no contêiner flex */
-    position: relative; /* Evita sobreposição com outros elementos */
-}
-
-.menu-toggle::before {
-    content: "☰"; /* Ícone do menu */
-    font-size: 35px;
+    text-align: center;
+    margin: 0;
+    position: relative;
     color: black;
 }
 
-body.dark-mode .menu-toggle::before
-{
-    color: white;
-}
+    .menu-toggle::before {
+        content: "☰";
+        font-size: 35px;
+    }
 
-@media (max-width: 1100px)
-{
-    .menu-toggle {display: block;}
-    nav ul
-    {
+@media (max-width: 1100px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 44px;
         right: 0;
         width: 100%;
-        box-shadow: 0 4px 6px white;
         padding: 10px 0;
         background: linear-gradient(to bottom, rgb(228, 227, 227), #535353);
-        box-shadow: 0 4px 6px black;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
-    body.dark-mode nav ul
-    {
-        background: linear-gradient(to bottom, black, gray);
-        box-shadow: 0 4px 6px white;
-    }
-    
-    nav ul.active
-    {
-        display: flex;
-    }
+        nav ul.active {
+            display: flex;
+        }
 
-    nav ul li
-    {
-        text-align: center;
-        padding: 10px 0;
-    }
-
-
+        nav ul li {
+            text-align: center;
+            padding: 10px 0;
+        }
 }
-/* ICONE GITHUB */
+
+#toggle-theme {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 5vw;
+    height: 5vw;
+    background-color: transparent;
+    background-image: url('src/icons/dark-mode1.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+    background-color: #1b1b1b;
+    color: white;
+}
+
+    body.dark-mode .interface {
+        background: linear-gradient(to bottom, grey, black);
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
+    }
+
+    body.dark-mode header a {
+        color: white;
+    }
+
+    body.dark-mode header .Name {
+        color: white;
+        text-shadow: 10px 10px 6px white;
+    }
+
+    body.dark-mode .btn-contato::before {
+        color: rgb(202, 202, 202);
+    }
+
+    body.dark-mode .menu-toggle::before {
+        color: white;
+    }
+
+    body.dark-mode #toggle-theme {
+        background-image: url('src/icons/dark-mode.png');
+        animation: spin 10s linear infinite;
+    }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 600px) {
+    body.dark-mode .btn-contato {
+        background: linear-gradient(to bottom, black, grey);
+    }
+
+        body.dark-mode .btn-contato:hover {
+            box-shadow: 0 0 6px white;
+        }
+
+        body.dark-mode .btn-contato:active {
+            background: linear-gradient(to bottom, grey, black);
+        }
+
+    body.dark-mode .contato {
+        background: linear-gradient(to bottom, black, grey);
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
+    }
+}
+
+@media (max-width: 1100px) {
+    body.dark-mode nav ul {
+        background: linear-gradient(to bottom, black, gray);
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Ícones */
 .git1 {
-    background-image: url('img/git1.png');
+    background-image: url('src/icons/git1.png');
     opacity: 1;
     z-index: 1;
 }
 
 .git2 {
-    background-image: url('img/git2.png');
-    opacity: 0; 
+    background-image: url('src/icons/git2.png');
+    opacity: 0;
     z-index: 2;
 }
 
 .git:hover .git1 {
-    opacity: 0; 
+    opacity: 0;
 }
 
 .git:hover .git2 {
-    opacity: 1; 
+    opacity: 1;
     transform: scale(1.1);
 }
 
-/* ICONE LINKEDIN */
 .in1 {
-    background-image: url('img/in1.png');
+    background-image: url('src/icons/in1.png');
     opacity: 1;
     z-index: 1;
 }
 
 .in2 {
-    background-image: url('img/in2.png');
+    background-image: url('src/icons/in2.png');
     opacity: 0;
     z-index: 2;
 }
@@ -339,15 +319,14 @@ body.dark-mode .menu-toggle::before
     transform: scale(1.2);
 }
 
-/* ICONE WHATSAPP */
 .wpp1 {
-    background-image: url('img/wpp1.png');
+    background-image: url('src/icons/wpp1.png');
     opacity: 1;
     z-index: 1;
 }
 
 .wpp2 {
-    background-image: url('img/wpp2.png');
+    background-image: url('src/icons/wpp2.png');
     opacity: 0;
     z-index: 2;
 }
@@ -358,4 +337,16 @@ body.dark-mode .menu-toggle::before
 
 .wpp:hover .wpp2 {
     opacity: 1;
+}
+
+body.dark-mode .git1 {
+    background-image: url('src/icons/git3.png');
+}
+
+body.dark-mode .in1 {
+    background-image: url('src/icons/in3.png');
+}
+
+body.dark-mode .wpp1 {
+    background-image: url('src/icons/wpp3.png');
 }

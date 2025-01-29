@@ -4,23 +4,23 @@
     <title>Rubens Maldonado</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--GOOGLE FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <!--END GOOGLE FONTS-->
-    <!--Open Graph-->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="Rubens Maldonado">
     <meta property="og:description" content="Desenvolvedor backend C/C++, JS, Python...">
     <meta property="og:image" content="img/git2.png">
-    <!--END Open Graph-->
-    <link rel="icon" type="image/x-icon" href="img/c++big.png">
+    <!-- Ícone -->
+    <link rel="icon" type="image/x-icon" href="src/icons/c++big.png">
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Assistant:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
 
-
-
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -54,51 +54,9 @@
                     <div class="wpp2"></div>
                 </a><!--wpp-->
             </div><!--contato-->
+        </div><!--interface-->
     </header>
-    <button id="toggle-theme">Light or Dark</button></div><!--interface-->
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('nav ul');
-        const btnContato = document.querySelector('.btn-contato');
-        const contatoDiv = document.querySelector('.contato');
-
-        // Função para fechar o menu de contato
-        function closeContato() {
-            contatoDiv.classList.remove('active');
-        }
-
-        // Função para fechar o menu de navegação
-        function closeMenu() {
-            navMenu.classList.remove('active');
-        }
-
-        // Toggle do menu (hamburguer)
-        menuToggle.addEventListener('click', () => {
-            // Fecha o menu de contato se estiver aberto
-            closeContato();
-            
-            // Alterna a visibilidade do menu de navegação
-            navMenu.classList.toggle('active');
-        });
-
-        // Toggle do botão de contato
-        btnContato.addEventListener('click', () => {
-            // Fecha o menu de navegação se estiver aberto
-            closeMenu();
-            
-            // Alterna a visibilidade do menu de contato
-            contatoDiv.classList.toggle('active');
-        });
-
-        // Pega o botão de alternância de tema
-        const toggleButton = document.getElementById("toggle-theme");
-
-        // Adiciona o evento de clique
-        toggleButton.addEventListener("click", function() {
-            // Alterna a classe 'dark-mode' no body
-            document.body.classList.toggle("dark-mode");
-        });
-
-    </script>         
+    <button id="toggle-theme"></button>
+    <script src="src/js/script.js"></script>      
 </body>
 </html>
