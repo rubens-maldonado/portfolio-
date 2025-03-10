@@ -51,3 +51,17 @@ function toggleTheme() {
 
 const toggleButton = document.getElementById("toggle-theme");
 toggleButton.addEventListener("click", toggleTheme);
+
+// Capturar IP Público
+fetch('https://api64.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("ip-info").textContent = `Seu IP: ${data.ip}`;
+    })
+    .catch(error => {
+        document.getElementById("ip-info").textContent = "Não foi possível obter o IP.";
+        console.error("Erro ao buscar IP:", error);
+    }
+);
+
+// ESPECIALIDADES 
