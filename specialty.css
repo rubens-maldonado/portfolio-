@@ -1,0 +1,76 @@
+/* ESTILO ESPECIALIDADES */
+
+
+.especialidade {
+    text-align: center;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.carousel{
+    display: flex;
+    margin-inline: auto;
+    max-width: 100%;
+    animation: scrollinfinito 10s linear infinite;
+}
+
+.carousel:hover{
+    animation-play-state: paused;
+}
+.carousel-container {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    max-width: 100%;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    gap: center;
+    overflow-x:auto;
+} 
+
+.especialidade-box {
+    scroll-snap-align: center;
+    background: #f0f0f0;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 60vw;
+    transition: 0.2s;
+    flex: 0 0 auto; /* Garante que os itens não encolham */
+    width: 300px; /* Largura fixa para cada item (ajuste conforme necessário) */
+}
+
+.especialidade-box:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.425);
+}
+
+body.dark-mode .especialidade-box {
+    background-color: rgba(255, 255, 255, 0.274);
+}
+
+body.dark-mode .especialidade-box:hover {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.425);
+}
+
+.especialidade-box img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .carousel{    animation-play-state: paused;
+    }
+    .carousel-container {
+        gap: center;
+        overflow-x:auto;
+    }
+
+    .especialidade-box {
+        flex: 0 0 50vw;
+        max-width: 100vw;
+    }
+}

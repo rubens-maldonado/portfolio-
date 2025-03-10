@@ -1,0 +1,78 @@
+/* Estilos da seção topo */
+.top-site {
+    padding: 80px 4%;
+    box-sizing: border-box;
+}
+
+/* Container flex para alinhar os elementos lado a lado */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* Permite quebra de linha em telas menores */
+    gap: 20px;        /* Espaço entre os itens */
+}
+
+/* Caixa de texto */
+.txt-top-site {
+    flex: 1;         /* Ocupa espaço proporcional */
+    max-width: 50%;  /* Limita para metade do container */
+}
+
+.txt-top-site h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.txt-top-site p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Caixa da imagem */
+.img-top-site {
+    flex: 1;         /* Ocupa espaço proporcional */
+    max-width: 50%;  /* Limita para metade do container */
+}
+
+/* Estilos da imagem */
+.img-top-site img {
+    width: 100%;
+    height: auto;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+/* Animação de flutuar */
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsividade: em telas pequenas, empilhamos os elementos */
+@media (max-width: 720px) {
+    .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .txt-top-site, .img-top-site {
+        max-width: 100%;
+    }
+    
+    .txt-top-site h1 {
+        font-size: 28px;
+    }
+    
+    .txt-top-site p {
+        font-size: 1.2rem;
+    }
+    
+    .img-top-site img {
+        max-width: 300px;
+    }
+}

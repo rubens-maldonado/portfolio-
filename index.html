@@ -22,6 +22,12 @@
 
     
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="specialty.css">
+    <link rel="stylesheet" href="topsite.css">
+    <link rel="stylesheet" href="projects.css">
+    
 </head>
 <body>
     <header>
@@ -35,9 +41,9 @@
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Especialidade</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#especialidade">Especialidade</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
                 </ul>
             </nav>
             <div class="contato">
@@ -49,14 +55,231 @@
                     <div class="in1"></div>
                     <div class="in2"></div>
                 </a><!--in-->
-                <a href="https://api.whatsapp.com/send/?phone=5521999038373&text&type=phone_number&app_absent=0" class="wpp" target="_blank">
+                <a href="https://api.whatsapp.com/send/?phone=5521999038373" class="wpp" target="_blank">
                     <div class="wpp1"></div>
                     <div class="wpp2"></div>
                 </a><!--wpp-->
             </div><!--contato-->
         </div><!--interface-->
     </header>
-    <button id="toggle-theme"></button>
-    <script src="src/js/script.js"></script>      
+    <button id="toggle-theme"></button> <!--dark-mode-->
+    <div class="ip-bubble" id="ip-info">
+        Carregando IP...
+    </div>
+    <main>
+        <section class="top-site">
+            <div class="interface-top-site">
+                <div class="flex">
+                    <!-- Conteúdo de texto -->
+                    <div class="txt-top-site">
+                        <h1>BEM VINDO AO MEU PORTFÓLIO</h1>
+                        <p>
+                            Sou apaixonado por tecnologia e, desde cedo, me aventurei em várias áreas, sempre buscando aprender e melhorar. 
+                            Minha jornada me levou a me especializar no desenvolvimento backend, com experiência sólida em C/C++, Python, 
+                            Shell Script e Git. Porém, minha curiosidade não tem limites, e agora estou explorando o mundo do frontend para criar interfaces dinâmicas e agradáveis. 
+                            Este portfólio é apenas o começo dessa jornada de constante evolução! Gosto de resolver problemas de forma criativa, criando soluções inovadoras e práticas. 
+                            Se você busca um desenvolvedor que se dedica com paixão e compromisso, seja bem-vindo ao meu espaço!
+                        </p>
+                    </div>
+                    <!-- Imagem -->
+                    <div class="img-top-site">
+                        <img src="src/img/my_photograph_edit.png" alt="Minha Foto">
+                    </div>
+                </div>
+            </div><!--interface-top-site-->
+        </section><!--top-site-->
+    </main>
+    
+
+        <section class="especialidade" id="especialidade">
+            <div class="interface-projetos">
+                <h2>ALGUMAS DE MINHAS ESPECIALIDADE.</h2>
+                <div class="carousel">
+                    <div class="carousel-container">
+                        <div class="especialidade-box">
+                            <img src="src/icons/c++big.png" alt="C/C++">
+                            <h3>C/C++</h3>
+                            <p>Estudei C/C++ na 42 Rio,<br>
+                                com foco em manipulação de memória,<br>  
+                                threads, alocação dinâmica,<br>
+                                POO e otimização de código<br>
+                                para alta performance.
+                                </p>
+                        </div><!--C/C++-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/python.png" alt="PYTHON">
+                            <h3>Python</h3>
+                            <p>Utilizo Python para automação de tarefas<br>
+                                e criação de scripts, otimizando<br>
+                                processos e simplificando fluxos<br>
+                                de trabalho com código eficiente<br>
+                                e legível, garantindo agilidade.
+                                </p>
+                        </div><!--Python-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/js.png" alt="JAVA SCRIPT">
+                            <h3>Java Script</h3>
+                            <p>Manipulação do DOM para menus,<br>
+                                interação com API para captura de<br>
+                                IP público e alternância de tema.<br>
+                                Carrossel de projetos com JavaScript,<br>
+                                oferecendo navegação interativa.
+                                </p>
+                        </div><!--JAVA SCRIPT-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/git_task.png" alt="GIT">
+                            <h3>Git</h3>
+                            <p>Tenho experiência com Git: inicializo<br>
+                                repositórios, faço commits e uso<br>
+                                branches para controle de versões.<br>
+                                Sei adicionar repositórios remotos,<br>
+                                enviar e baixar alterações com push.
+                                </p>
+                        </div><!--git-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/linux (1).png" alt="LINUX">
+                            <h3>Linux</h3>
+                            <p>Tenho experiência em Linux, com<br>
+                                comandos para navegação de diretórios,<br>
+                                gerenciamento de arquivos e permissões.<br>
+                                Uso de ferramentas como `grep`, `awk`<br>
+                                e gerenciamento de pacotes com `apt`.
+                                </p>
+                        </div><!--LINUX-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/shell.png" alt="SHELL">
+                            <h3>Shell Script</h3>
+                            <p>Automatizo tarefas no Linux com<br>  
+                                Shell Script, gerencio permissões e<br>  
+                                arquivos, otimizando processos do<br>
+                                sistema para maior eficiência.
+                                </p>
+                        </div><!--SHELL-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/powerapps.png" alt="POWER">
+                            <h3>Power Apps</h3>
+                            <p>Desenvolvo apps no PowerApps e uso<br>
+                                Power Automate para automatizar fluxos,<br>
+                                integrando APIs e armazenando dados<br>
+                                no SharePoint para soluções dinâmicas.                                
+                                </p>
+                        </div><!--POWER APPS-->
+
+                        <div class="especialidade-box">
+                            <img src="src/icons/c++big.png" alt="C/C++">
+                            <h3>C/C++</h3>
+                            <p>Estudei C/C++ na 42 Rio,<br>
+                                com foco em manipulação de memória,<br>  
+                                threads, alocação dinâmica,<br>
+                                POO e otimização de código<br>
+                                para alta performance.
+                                </p>
+                        </div><!--C/C++-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/python.png" alt="PYTHON">
+                            <h3>Python</h3>
+                            <p>Utilizo Python para automação de tarefas<br>
+                                e criação de scripts, otimizando<br>
+                                processos e simplificando fluxos<br>
+                                de trabalho com código eficiente<br>
+                                e legível, garantindo agilidade.
+                                </p>
+                        </div><!--Python-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/js.png" alt="JAVA SCRIPT">
+                            <h3>Java Script</h3>
+                            <p>Manipulação do DOM para menus,<br>
+                                interação com API para captura de<br>
+                                IP público e alternância de tema.<br>
+                                Carrossel de projetos com JavaScript,<br>
+                                oferecendo navegação interativa.
+                                </p>
+                        </div><!--JAVA SCRIPT-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/git_task.png" alt="GIT">
+                            <h3>Git</h3>
+                            <p>Tenho experiência com Git: inicializo<br>
+                                repositórios, faço commits e uso<br>
+                                branches para controle de versões.<br>
+                                Sei adicionar repositórios remotos,<br>
+                                enviar e baixar alterações com push.
+                                </p>
+                        </div><!--git-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/linux.png" alt="LINUX">
+                            <h3>Linux</h3>
+                            <p>Tenho experiência em Linux, com<br>
+                                comandos para navegação de diretórios,<br>
+                                gerenciamento de arquivos e permissões.<br>
+                                Uso de ferramentas como <code>grep</code>, <code>awk</code><br>
+                                e gerenciamento de pacotes com <code>apt</code>.
+                            </p>
+                        </div><!--LINUX-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/shell.png" alt="SHELL">
+                            <h3>Shell Script</h3>
+                            <p>Automatizo tarefas no Linux com<br>  
+                                Shell Script, gerencio permissões e<br>  
+                                arquivos, otimizando processos do<br>
+                                sistema para maior eficiência.
+                            </p>
+                        </div><!--SHELL-->
+                        <div class="especialidade-box">
+                            <img src="src/icons/powerapps.png" alt="POWER">
+                            <h3>Power Apps</h3>
+                            <p>Desenvolvo apps no PowerApps e uso<br>
+                                Power Automate para automatizar fluxos,<br>
+                                integrando APIs e armazenando dados<br>
+                                no SharePoint para soluções dinâmicas.                                
+                                </p>
+                        </div><!--POWER APPS-->
+
+                    </div><!--carousel-container-->
+                </div><!--carousel-->
+                
+            </div><!--interface-projetos-->
+        </section>  <!--ESPECIALIDADE-->
+
+        <section class="sobre" id="sobre">
+            <div class ="interface-sobre">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="src/img/i_am_blue.jpeg", alt="">
+                    </div><!--img-->
+                    <div class="txt-sobre">
+                        <h2>MUITO PRAZER! <span>RUBENS MALDONADO</span></h2>
+                        <p>Minha trajetória profissional começou fora da área de TI, com experiências como soldado do Exército Brasileiro, garçom, bartender e até como operador de piscina. 
+                            Sempre tive paixão por TI, e agora estou me jogando de cabeça nesse mundo. 
+                            Hoje, estou focado no desenvolvimento de software, principalmente backend, mas também estou aprendendo sobre frontend. 
+                            Estou em busca de novos desafios e oportunidades para crescer na área de TI.</p>
+                    </div><!--txt-sobre-->
+                </div><!--flex-->
+            </div><!--interface-sobre-->
+        </section><!--sobre-->
+
+        
+
+        <section class="projetos" id="projetos">
+            <h1>Ainda em construção, mas pode ir dando uma olhada no meu Github</h1>
+            <a href="https://github.com/rubens-maldonado" target="_blank">Acesse meu Github 🚀</a>
+        </section>
+        
+
+        <section class="formulario">
+            <div class="interface-formulario">
+                <h2>FALA COMIGO.</h2>
+                <form action="">
+                    <input type="text" name="" placeholder="Seu nome:" required>
+                    <input type="text" name="" placeholder="Seu e-mail:" required>
+                    <input type="text" name="" placeholder="Seu celular:">
+                    <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar">
+                        <input type="submit" value="ENVIAR">
+                    </div>
+                </form>
+            </div><!--interface-->
+        </section><!--formulario-->
+    </main>
 </body>
+<script src="src/js/script.js"></script>
 </html>

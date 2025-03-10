@@ -1,0 +1,44 @@
+/* SOBRE MIM */
+
+/* Estilos gerais */
+.sobre {
+    padding: 40px 4%;
+}
+
+.interface-sobre {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sobre .flex {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 40px; /* Espaço entre a imagem e o texto */
+}
+
+.img-sobre img {
+    max-width: 400px; /* Define a largura máxima da imagem */
+    width: 100%; /* Faz a imagem se ajustar ao contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Borda arredondada */
+    display: block; /* Garante que a margem automática funcione */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+.txt-sobre {
+    flex: 1; /* O texto ocupa o espaço restante */
+}
+
+.txt-sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.txt-sobre h2 span{
+    color: blue;
+    font-size: 2.3rem;
+}
+
+.txt-sobre p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}

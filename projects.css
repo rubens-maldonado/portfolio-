@@ -1,0 +1,26 @@
+.projetos {
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 80px 20px; /* Espaçamento interno */
+    background-color: rgba(255, 255, 255, 0.5); /* Cor cinza claro com 50% de opacidade */
+}
+
+.projetos h1 {
+    font-size: 24px; /* Tamanho do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.projetos a {
+    display: inline-block; /* Para transformar o link em botão */
+    text-decoration: none; /* Remove sublinhado */
+    background-color: #007acc; /* Cor azul do GitHub */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Tamanho do botão */
+    border-radius: 8px; /* Cantos arredondados */
+    font-weight: bold; /* Deixa o texto mais destacado */
+    transition: 0.3s ease-in-out; /* Efeito suave ao passar o mouse */
+}
+
+.projetos a:hover {
+    background-color: #005fa3; /* Tom mais escuro no hover */
+    transform: scale(1.05); /* Aumenta um pouco no hover */
+}

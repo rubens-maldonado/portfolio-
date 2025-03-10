@@ -4,10 +4,10 @@
 }
 
 body {
-    background-color: rgb(226, 224, 224);
+    background-color: rgba(226, 224, 224, 0.945);
     color: black;
     height: 100vh;
-    margin: 0;
+    margin: -50;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -32,60 +32,59 @@ header {
     padding: 40px 4%;
 }
 
-    header > .interface {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+header > .interface {
+    align-items: center;
+    justify-content: space-between;
+}
 
-    header a {
-        text-decoration: none;
+header a {
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+    color: black;
+}
+
+header .menu-desktop a:hover {
+    transform: scale(1.2);
+}
+
+header .Name {
+    font-size: 20px;
+    font-family: serif;
+    margin: 5px;
+    text-shadow: 10px 10px 6px black;
+    font-size: clamp(10px, 4vw, 30px);
+    color: black;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+    header nav ul li {
         display: inline-block;
-        transition: 0.2s;
-        color: black;
+        padding: 0 40px;
     }
 
-    header .menu-desktop a:hover {
-        transform: scale(1.2);
-    }
+header .contato a {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    margin: 5px;
+}
 
-    header .Name {
-        font-size: 20px;
-        font-family: serif;
-        margin: 5px;
-        text-shadow: 10px 10px 6px black;
-        font-size: clamp(10px, 4vw, 30px);
-        color: black;
-    }
-
-    header nav ul {
-        list-style-type: none;
-    }
-
-        header nav ul li {
-            display: inline-block;
-            padding: 0 40px;
-        }
-
-    header .contato a {
-        position: relative;
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        text-decoration: none;
-        margin: 5px;
-    }
-
-    header .contato div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50px;
-        height: 50px;
-        background-size: cover;
-        background-position: center;
-        transition: opacity 0.5s ease;
-    }
+header .contato div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease;
+}
 
 /* Responsividade para mobile */
 .btn-contato {
@@ -141,7 +140,6 @@ header {
 
         .contato a {
             text-align: center;
-            padding: 10px 20px;
         }
 }
 
@@ -191,6 +189,7 @@ header {
 
 #toggle-theme {
     position: fixed;
+    z-index: 9999; /* Garante que fique sobre todos os elementos */
     bottom: 20px;
     right: 20px;
     width: 5vw;
@@ -238,6 +237,7 @@ body.dark-mode {
     body.dark-mode #toggle-theme {
         background-image: url('src/icons/dark-mode.png');
         animation: spin 10s linear infinite;
+        z-index: 9999; /* Garante que fique sobre todos os elementos */
     }
 
 @keyframes spin {
@@ -349,4 +349,89 @@ body.dark-mode .in1 {
 
 body.dark-mode .wpp1 {
     background-image: url('src/icons/wpp3.png');
+}
+
+/*indentificando ip */
+.ip-bubble {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: 0.2s;
+}
+
+body.dark-mode .ip-bubble{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+
+}
+
+
+/*ESTILO TOPO SITE*/
+
+/* Estilos da seção topo */
+section.top-site {
+    padding: 0px 4%;
+}
+
+.interface-top-site {
+    flex: 1; /* Permite que o texto se ajuste automaticamente */
+}
+
+
+/* Estilos do título */
+.top-site h1 {
+    font-size: 42px;
+    margin-bottom: 20px; /* Adicionado espaçamento abaixo do título */
+    max-width: 100%; /* Reduz a largura do texto */
+}
+
+
+/* Estilos do parágrafo */
+.top-site p {
+    font-size: 1.3rem; /* Tamanho de fonte ajustado */
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+    max-width: 100%; /* Reduz a largura do texto */
+
+}
+
+/* Contêiner da interface do topo */
+.interface-top-site {
+    display: flex;
+    align-items: center;
+}
+
+.top-site .image-top-site {
+    justify-content: center; /* Centraliza a imagem */
+}
+
+/* Estilos da imagem */
+.top-site img {
+    flex: 2;
+    animation: flutuar 2s ease-in-out infinite alternate;
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    width: 1000px;
+}
+
+/* Animação de flutuar */
+@keyframes flutuar {
+    0% {
+        transform: translateY(0); /* Usando transform para melhor performance */
+    }
+    100% {
+        transform: translateY(-20px); /* Movimento mais suave */
+    }
+}
+
+/*Movimentção clicando no link de forma suave*/
+
+html {
+    scroll-behavior: smooth;
 }
